@@ -1,5 +1,8 @@
 package com.fh.bean;
 
+import com.fh.annotation.ExportExcel;
+import com.fh.annotation.ExportTitle;
+
 import java.math.BigDecimal;
 import java.util.Date;
 
@@ -10,16 +13,27 @@ import java.util.Date;
  * @description: TODO
  * @date 2020/1/1811:45
  */
+@ExportTitle(title = "员工表")
 public class EmpBean {
+    @ExportExcel(name = "id")
     private Integer id;
+    @ExportExcel(name = "jobId")
     private Integer jobId;
+    @ExportExcel(name = "所在岗位")
     private String jobName;
+    @ExportExcel(name = "工资")
     private BigDecimal salary;
+    @ExportExcel(name = "入职时间")
     private Date entryTime;
+    @ExportExcel(name = "leaderId")
     private Integer leaderId;
+    @ExportExcel(name = "领导名字")
     private String leaderName;
+    @ExportExcel(name = "deptId")
     private Integer deptId;
+    @ExportExcel(name = "所在部门")
     private String deptName;
+    @ExportExcel(name = "员工姓名")
     private String name;
 
     public Integer getId() {

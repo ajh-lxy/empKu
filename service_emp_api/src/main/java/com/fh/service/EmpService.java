@@ -4,6 +4,8 @@ import com.fh.bean.EmpBean;
 import com.fh.utils.page.PageBean;
 import com.fh.utils.response.ResponseServer;
 
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * @author Lenovo
  * @title: EmpService
@@ -19,4 +21,10 @@ public interface EmpService {
      * @return
      */
     ResponseServer queryEmpList(PageBean<EmpBean> page, EmpBean empBean);
+
+    /**
+     * 导出
+     * @param response
+     */
+    void xiaEmpList(HttpServletResponse response);
 }

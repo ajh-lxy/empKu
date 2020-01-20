@@ -5,10 +5,12 @@ import com.fh.service.EmpService;
 import com.fh.utils.page.PageBean;
 import com.fh.utils.response.ResponseServer;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author Lenovo
@@ -36,5 +38,14 @@ public class EmpController {
     public ResponseServer queryEmpList(PageBean<EmpBean> page, EmpBean empBean){
         ResponseServer responseServer = empService.queryEmpList(page,empBean);
         return responseServer;
+    }
+
+    /**
+     * 导出
+     * @param response
+     */
+    @GetMapping("xiaEmpList")
+    public void  xiaEmpList(HttpServletResponse response) {
+        empService.xiaEmpList(response);
     }
 }
